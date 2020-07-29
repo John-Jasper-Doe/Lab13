@@ -45,5 +45,12 @@ bool table::empty() const noexcept {
   return storage_.empty();
 }
 
+storage_t::const_iterator table::cbegin() const noexcept {
+  return storage_.cbegin();
+}
+storage_t::const_iterator table::cend() const noexcept {
+  return storage_.cend();
+}
+
 } /* db:: */
 } /* join_server:: */

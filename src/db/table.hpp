@@ -22,7 +22,7 @@ namespace db {
 /** @brief The table class */
 class table final {
   std::string name_{""};
-  internals::storage_t storage_;
+  storage_t storage_;
 
 public:
   table() = delete;
@@ -74,6 +74,9 @@ public:
    * @return "True" on empty, "False" - otherwise
    */
   bool empty() const noexcept;
+
+  storage_t::const_iterator cbegin() const noexcept;
+  storage_t::const_iterator cend() const noexcept;
 };
 
 } /* db:: */

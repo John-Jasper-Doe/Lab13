@@ -12,9 +12,9 @@
 #ifndef INTERNALS_TYPE_HPP_
 #define INTERNALS_TYPE_HPP_
 
+#include <map>
 #include <string>
 #include <vector>
-#include <map>
 
 namespace join_server {
 namespace db {
@@ -26,6 +26,7 @@ using storage_t = std::map<int, row_t>;
 } /* internals:: */
 
 using row_t = internals::row_t;
+using storage_t = internals::storage_t;
 
 } /* db:: */
 } /* join_server:: */
