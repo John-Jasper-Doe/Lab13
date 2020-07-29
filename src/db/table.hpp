@@ -46,6 +46,34 @@ public:
    * @return "True" on success, "False" - otherwise
    */
   bool insert(int key, const row_t& value) noexcept;
+
+  /**
+   * @brief Update value for key.
+   * @param [in] key - primary key on table.
+   * @param [in] value - added data.
+   */
+  void update(int key, const row_t& value) noexcept;
+
+  /** @brief Clearing the table. */
+  void clear() noexcept;
+
+  /**
+   * @brief Name
+   * @return Name of table.
+   */
+  std::string name() const noexcept;
+
+  /**
+   * @brief Size
+   * @return Number of rows
+   */
+  size_t size() const noexcept;
+
+  /**
+   * @brief Empty
+   * @return "True" on empty, "False" - otherwise
+   */
+  bool empty() const noexcept;
 };
 
 } /* db:: */
