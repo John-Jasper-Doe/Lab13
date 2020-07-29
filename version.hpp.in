@@ -1,0 +1,18 @@
+/**
+ * @file version.hpp
+ * @brief Project version announcement.
+ */
+
+/* See the license in the file "LICENSE.txt" in the root directory. */
+
+#ifndef JN_SRV_VERSION_HPP_
+#define JN_SRV_VERSION_HPP_
+
+#define JN_SRV_MAJOR @JN_SRV_MAJOR@
+#define JN_SRV_MINOR @JN_SRV_MINOR@
+#define JN_SRV_PATCH @JN_SRV_PATCH@
+
+#define JN_SRV_VERSION \
+    (JN_SRV_MAJOR * 10000 + JN_SRV_MINOR * 100 + JN_SRV_PATCH)
+
+#endif /* JN_SRV_VERSION_HPP_ */

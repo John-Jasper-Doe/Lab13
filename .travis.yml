@@ -1,0 +1,39 @@
+dist: bionic
+
+language: c++
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-7
+      - libboost-all-dev
+      - doxygen
+      - graphviz
+
+script:
+- cmake .
+- cmake --build .
+- cmake --build . --target docs
+- cmake --build . --target package
+
+env:
+  - TARGET=join_server
+
+deploy:
+- provider: pages
+  skip-cleanup: true
+  local_dir: docs/html
+  github-token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master
+
+- provider: script
+  skip_cleanup: true
+  on:
+    branch: master
+  script:
+  - curl -T ${TARGET}-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -ujohn-jasper-doe:$BINTRAY_API_KEY "https://api.bintray.com/content/john-jasper-doe/otus-cpp/homeworks/${TARGET}/$TRAVIS_BUILD_NUMBER/${TARGET}-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=xenial;deb_component=main;deb_architecture=amd64;publish=1"
+
