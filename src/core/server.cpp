@@ -9,23 +9,29 @@
 #include "server.hpp"
 #include <boost/bind.hpp>
 
-namespace bulk_server {
+/** @brief The namespace of the JOIN SERVER project */
+namespace join_server {
+/** @brief The namespace of the "Core" */
+namespace core {
 
-server::server(unsigned short port, unsigned int bulk_size) noexcept
+server::server(unsigned short port, common::taskpool_ptr_t pool) noexcept
   : ep_(ba::ip::tcp::v4(), port)
   , acceptor_(context_, ep_)
-  , handle_(libasync::async::connect(bulk_size)) {}
+  , pool_(std::move(pool))
+  , storage_{std::make_shared<db::dualstor>()} {}
 
 server::~server() noexcept {
   close();
 }
 
-void server::start() {
+void server::exec() {
+  pool_->start();
+
   ba::signal_set signal(context_, SIGINT, SIGABRT);
   signal.async_wait(boost::bind(&server::signal_handler, shared_from_this(),
                                 ba::placeholders::error, ba::placeholders::signal_number()));
 
-  auto client = std::make_shared<bulk_server::client>(context_, handle_);
+  auto client = std::make_shared<client_t>(context_, pool_, storage_);
   acceptor_.async_accept(
       client->socket(),
       boost::bind(&server::handle_accept, shared_from_this(), client, ba::placeholders::error));
@@ -34,19 +40,15 @@ void server::start() {
 }
 
 void server::close() noexcept {
-  if (handle_) {
-    libasync::async::disconnect(handle_);
-    handle_ = nullptr;
-  }
+  pool_->stop();
 }
 
-void server::signal_handler(const boost::system::error_code&, int) {
+void server::signal_handler(const bs::error_code&, int) {
   acceptor_.close();
   close();
 }
 
-void server::handle_accept(const std::shared_ptr<bulk_server::client>& client,
-                           const boost::system::error_code& err) {
+void server::handle_accept(const client_ptr_t& client, const bs::error_code& err) {
   using namespace std::string_literals;
 
   if (err == boost::system::errc::operation_canceled)
@@ -56,10 +58,11 @@ void server::handle_accept(const std::shared_ptr<bulk_server::client>& client,
 
   client->start();
 
-  auto waited_client = std::make_shared<bulk_server::client>(context_, handle_);
+  auto waited_client = std::make_shared<client_t>(context_, pool_, storage_);
   acceptor_.async_accept(waited_client->socket(),
                          boost::bind(&server::handle_accept, shared_from_this(), waited_client,
                                      ba::placeholders::error));
 }
 
-} /* bulk_server */
+} /* core:: */
+} /* join_server:: */
