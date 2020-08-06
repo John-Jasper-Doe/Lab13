@@ -30,11 +30,11 @@ public:
 
   ~table() = default;
 
-  table(const table&) = delete;
-  table(table&&) = delete;
+  //  table(const table&) = delete;
+  //  table(table&&) = delete;
 
-  table& operator=(const table&) = delete;
-  table& operator=(table&&) = delete;
+  //  table& operator=(const table&) = delete;
+  //  table& operator=(table&&) = delete;
 
   /**
    * @brief Insert value.
@@ -55,7 +55,7 @@ public:
   void update(int key, const row_t& value) noexcept;
 
   /** @brief Clearing the table. */
-  void clear() noexcept;
+  void truncate() noexcept;
 
   /**
    * @brief Name
@@ -77,6 +77,8 @@ public:
 
   storage_t::const_iterator cbegin() const noexcept;
   storage_t::const_iterator cend() const noexcept;
+
+  std::string as_str();
 };
 
 } /* db:: */

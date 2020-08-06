@@ -20,7 +20,7 @@ namespace join_server {
 namespace db {
 namespace internals {
 
-using row_t = std::string;
+using row_t = std::vector<std::string>;
 using storage_t = std::map<int, row_t>;
 
 } /* internals:: */

@@ -7,6 +7,7 @@
  */
 
 #include "table.hpp"
+#include <algorithm>
 
 namespace join_server {
 namespace db {
@@ -29,7 +30,7 @@ void table::update(int key, const row_t& value) noexcept {
     storage_[key] = value;
 }
 
-void table::clear() noexcept {
+void table::truncate() noexcept {
   storage_.clear();
 }
 
@@ -50,6 +51,20 @@ storage_t::const_iterator table::cbegin() const noexcept {
 }
 storage_t::const_iterator table::cend() const noexcept {
   return storage_.cend();
+}
+
+std::string table::as_str() {
+  std::string res{""};
+
+  std::for_each(cbegin(), cend(), [&res](const std::pair<int, row_t>& p) {
+    res.append(std::to_string(p.first));
+    for (const std::string& s : p.second) {
+      res.append("," + s);
+    }
+    res.append("\n");
+  });
+
+  return res;
 }
 
 } /* db:: */
