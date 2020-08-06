@@ -8,5 +8,8 @@ set(PROJECT_SRC
 
 addtest("alltests"
   testtable.cpp
+#  testtaskpool.cpp
+  testtsqueue.cpp
+  testsplit.cpp
   ${PROJECT_SRC}
 )
