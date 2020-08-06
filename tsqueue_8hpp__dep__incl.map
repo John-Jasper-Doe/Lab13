@@ -1,0 +1,9 @@
+<map id="src/common/tsqueue.hpp" name="src/common/tsqueue.hpp">
+<area shape="rect" id="node2" href="$taskpool_8hpp.html" title="Task pool implementation. " alt="" coords="343,80,533,107"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title="Main file in this project. " alt="" coords="493,304,599,331"/>
+<area shape="rect" id="node3" href="$client_8hpp.html" title="Definition of the class &quot;Client&quot;. " alt="" coords="210,155,351,181"/>
+<area shape="rect" id="node5" href="$server_8hpp.html" title="Definition of the class &quot;Server&quot;. " alt="" coords="344,229,489,256"/>
+<area shape="rect" id="node4" href="$client_8cpp.html" title="Implimentation of the class &quot;Client&quot;. " alt="" coords="5,229,145,256"/>
+<area shape="rect" id="node8" href="$parser_8cpp.html" title="Implementation of the &quot;Parser&quot; class. " alt="" coords="169,229,320,256"/>
+<area shape="rect" id="node6" href="$server_8cpp.html" title="Implimentation of the class &quot;Server&quot;. " alt="" coords="325,304,469,331"/>
+</map>

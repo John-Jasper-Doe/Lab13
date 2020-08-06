@@ -1,0 +1,10 @@
+<map id="src/core/server.hpp" name="src/core/server.hpp">
+<area shape="rect" id="node3" href="$client_8hpp.html" title="Definition of the class &quot;Client&quot;. " alt="" coords="533,80,620,107"/>
+<area shape="rect" id="node5" href="$taskpool_8hpp.html" title="Task pool implementation. " alt="" coords="383,155,549,181"/>
+<area shape="rect" id="node19" href="$parser_8hpp.html" title="Discription of the &quot;Parser&quot; class. " alt="" coords="625,155,753,181"/>
+<area shape="rect" id="node13" href="$dualstor_8hpp.html" title="Definition of the class &quot;Dualstor&quot;. " alt="" coords="801,155,923,181"/>
+<area shape="rect" id="node11" href="$tsqueue_8hpp.html" title="Implementation of the class &quot;TSQueue&quot;. " alt="" coords="25,229,128,256"/>
+<area shape="rect" id="node14" href="$table_8hpp.html" title="Definition of the class &quot;Table&quot;. " alt="" coords="846,229,929,256"/>
+<area shape="rect" id="node16" href="$type_8hpp.html" title="Definition of internal&#39;s type. " alt="" coords="732,304,872,331"/>
+<area shape="rect" id="node20" href="$iparser_8hpp.html" title="Description of the interface class &quot;IParser&quot;. " alt="" coords="727,229,821,256"/>
+</map>

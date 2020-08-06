@@ -1,0 +1,11 @@
+<map id="src/proto/parser.cpp" name="src/proto/parser.cpp">
+<area shape="rect" id="node2" href="$parser_8hpp.html" title="Discription of the &quot;Parser&quot; class. " alt="" coords="132,155,223,181"/>
+<area shape="rect" id="node7" href="$split_8hpp.html" title="Implementation of various split functions. " alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node9" href="$client_8hpp.html" title="Definition of the class &quot;Client&quot;. " alt="" coords="318,80,437,107"/>
+<area shape="rect" id="node6" href="$iparser_8hpp.html" title="Description of the interface class &quot;IParser&quot;. " alt="" coords="115,229,210,256"/>
+<area shape="rect" id="node11" href="$taskpool_8hpp.html" title="Task pool implementation. " alt="" coords="586,155,753,181"/>
+<area shape="rect" id="node19" href="$dualstor_8hpp.html" title="Definition of the class &quot;Dualstor&quot;. " alt="" coords="388,155,511,181"/>
+<area shape="rect" id="node17" href="$tsqueue_8hpp.html" title="Implementation of the class &quot;TSQueue&quot;. " alt="" coords="673,229,775,256"/>
+<area shape="rect" id="node20" href="$table_8hpp.html" title="Definition of the class &quot;Table&quot;. " alt="" coords="325,229,408,256"/>
+<area shape="rect" id="node21" href="$type_8hpp.html" title="Definition of internal&#39;s type. " alt="" coords="337,304,477,331"/>
+</map>
