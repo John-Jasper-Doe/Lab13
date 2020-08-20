@@ -35,5 +35,5 @@ deploy:
   on:
     branch: master
   script:
-  - curl -T ${TARGET}-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -ujohn-jasper-doe:$BINTRAY_API_KEY "https://api.bintray.com/content/john-jasper-doe/otus-cpp/homeworks/${TARGET}/$TRAVIS_BUILD_NUMBER/${TARGET}-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=xenial;deb_component=main;deb_architecture=amd64;publish=1"
+  - curl -T ${TARGET}-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -ujohn-jasper-doe:$BINTRAY_API_KEY "https://api.bintray.com/content/john-jasper-doe/otus-cpp/homeworks/${TARGET}/$TRAVIS_BUILD_NUMBER/${TARGET}-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=bionic;deb_component=main;deb_architecture=amd64;publish=1"
 
